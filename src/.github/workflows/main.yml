@@ -16,7 +16,7 @@ jobs:
 
             - name: Install Dependencies
               # Installs all of our dependencies from package-lock.json
-              uses: npm ci
+              run: npm ci
 
             - name: Print Debugging Information
               run: |
