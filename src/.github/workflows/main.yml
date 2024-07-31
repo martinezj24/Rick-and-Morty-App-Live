@@ -1,0 +1,29 @@
+name: Rick and Morty CI/CD
+
+on: push 
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout the Code
+              # clones github repository
+              uses: actions/checkout@v4
+
+            - name: Use Node Version 4
+              # uses specific node version
+              uses: actions/setup-node@v4
+
+            - name: Install Dependencies
+              # Installs all of our dependencies from package-lock.json
+              uses: npm ci
+
+            - name: Print Debugging Information
+              run: |
+                echo "Node version: $(node --version)"
+                echo "Npm version: $(NPM --version)"
+                ECHO "Working Directory: $(pwd)"
+
+
+
+
